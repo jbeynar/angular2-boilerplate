@@ -1,12 +1,23 @@
-// This corresponding to a Angular1.x dependency injection concept
 import {Component} from 'angular2/core';
 
-// Component metadata
-// `@` turns Component call as a decorator
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    templateUrl: 'app/app.tpl.html'
 })
 
-// Declaring module; in Angular1.x it was angular.module('AppComponent'...
-export class AppComponent { }
+export class AppComponent {
+
+    selectedUser;
+
+    users = [
+        {"id":1,"gender":"Female","firstName":"Anna","lastName":"Lewis","email":"alewis0@slideshare.net"},
+        {"id":2,"gender":"Male","firstName":"Chris","lastName":"Lane","email":"clane1@indiegogo.com"},
+        {"id":3,"gender":"Male","firstName":"Alan","lastName":"Burke","email":"aburke2@spiegel.de"},
+        {"id":4,"gender":"Female","firstName":"Kathy","lastName":"Tucker","email":"ktucker3@bbc.co.uk"},
+        {"id":5,"gender":"Male","firstName":"Douglas","lastName":"Alvarez","email":"dalvarez4@biglobe.ne.jp"}
+    ];
+
+    selectUser(user){
+        this.selectedUser = user;
+    }
+}
