@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Angular 2 QuickStart</title>
+        <title>Users Management</title>
         <script src="node_modules/es6-shim/es6-shim.min.js"></script>
         <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
         <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
@@ -10,16 +10,18 @@
         <script>
             System.config({
                 packages: {
-                    app: {
+                    build: {
                         format: 'register',
                         defaultExtension: 'js'
                     }
                 }
             });
-            System.import('app/main').then(null, console.error.bind(console));
+            System.import('build/main').then(null, console.error.bind(console));
         </script>
+        <link rel="stylesheet" href="app/main.css" media="all">
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     </head>
     <body>
-        <my-app>Loading...</my-app>
+        <app-root><h2 class="text-center">Loading...</h2></app-root>
     </body>
 </html>

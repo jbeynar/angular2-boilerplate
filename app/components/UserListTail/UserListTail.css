@@ -1,0 +1,19 @@
+.component {
+    font-family: Arial;
+    float: left;
+    padding: 10px;
+    color: #ffffff;
+    background: #56a1ff;
+    margin: 5px;
+    width: 90px;
+    height: 90px;
+    cursor: pointer;
+}
+
+.component:first-child{
+    margin-left:0px;
+}
+
+.component h4{
+    margin:0px;
+}

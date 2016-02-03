@@ -1,0 +1,29 @@
+<h2>Users management</h2>
+
+<user-list-tail *ngFor="#user of users" [user]="user" (click)="selectUser(user)"></user-list-tail>
+
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-4">
+        <div *ngIf="selectedUser">
+            <h4>{{selectedUser.firstName}} {{selectedUser.lastName}} (ID {{selectedUser.id}})</h4>
+            <div class="form-group">
+                <label>First name</label>
+                <input class="form-control" type="text" [(ngModel)]="selectedUser.firstName" required>
+            </div>
+            <div class="form-group">
+                <label>Last name</label>
+                <input class="form-control" type="text" [(ngModel)]="selectedUser.lastName" required>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <input class="form-control" type="text" [(ngModel)]="selectedUser.gender" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input class="form-control" type="email" [(ngModel)]="selectedUser.email" required>
+            </div>
+        </div>
+    </div>
+</div>
