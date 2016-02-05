@@ -1,12 +1,12 @@
-<h2>Users management</h2>
+<h2>Tail list component</h2>
 
-<user-list-tail *ngFor="#user of users" [user]="user" (click)="selectUser(user)"></user-list-tail>
+<tail-list-item *ngFor="#user of users" [item]="user" (click)="selectUser(user)"></tail-list-item>
 
 <div class="clearfix"></div>
 
 <div class="row">
     <div class="col-xs-12 col-sm-4">
-        <div *ngIf="selectedUser">
+        <form *ngIf="selectedUser">
             <h4>{{selectedUser.firstName}} {{selectedUser.lastName}} (ID {{selectedUser.id}})</h4>
             <div class="form-group">
                 <label>First name</label>
@@ -24,6 +24,9 @@
                 <label>Email</label>
                 <input class="form-control" type="email" [(ngModel)]="selectedUser.email" required>
             </div>
-        </div>
+            <div class="form-group">
+                <button type="submit">Save</button>
+            </div>
+        </form>
     </div>
 </div>

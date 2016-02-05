@@ -1,27 +1,28 @@
 import {Component,OnInit} from "angular2/core";
-import {UserListTail} from "../UserListTail/UserListTail";
-import {UserDAO} from "../../services/User/UserDAO";
-import {IUser} from "../../services/User/IUser";
+import {ROUTER_DIRECTIVES, Router, RouteConfig} from "angular2/router";
+import {TailList} from "../TailList/TailList";
+import {Home} from "../Home/Home";
 
 @Component({
     selector: 'app-root',
-    directives: [UserListTail],
-    providers: [UserDAO],
-    templateUrl: 'app/components/Application/Application.tpl.html',
+    directives: [ROUTER_DIRECTIVES],
+    templateUrl: 'app/components/Application/Application.html',
 })
 
-export class Application implements OnInit{
+@RouteConfig([
+    {path:'hello/:name', name:'Hello', component: Home, useAsDefault: true},
+    {path:'users-list', name:'Users', component: TailList},
+])
 
-    selectedUser:any;
-    users: IUser[];
+export class Application{
 
-    constructor(private UserDAO:UserDAO){}
+    public name:String;
 
-    ngOnInit(){
-        this.UserDAO.getUsers().then((users:any[]) => {this.users=users})
-    }
+    constructor(private router:Router){}
 
-    selectUser(user:any){
-        this.selectedUser = user;
+    public onKeyPress(controlValue){
+        if(controlValue){
+            this.router.navigate(['Hello', {'name':controlValue}]);
+        }
     }
 }

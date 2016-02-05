@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6">
+            <a class="btn btn-lg btn-default" [routerLink]="['Hello', {name:myName}]">Home {{myName}}</a>
+            <a class="btn btn-lg btn-default" [routerLink]="['Users']">Users management</a>
+        </div>
+        <div class="col-xs-6">
+            <input class="form-control input-lg pull-left" placeholder="What's your name?" [(ngModel)]="myName" (keyup)="onKeyPress(myName)"/>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>
