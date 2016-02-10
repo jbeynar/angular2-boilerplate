@@ -1,5 +1,6 @@
 import {Component,OnInit} from "angular2/core";
 import {RouteParams,RouteData} from "angular2/router";
+import {NgForm} from "angular2/common";
 import {TailListItem} from "../TailListItem/TailListItem";
 import {UserDAO} from "../../services/User/UserDAO";
 import {IUser} from "../../services/User/IUser";
@@ -25,5 +26,9 @@ export class TailList implements OnInit{
 
     selectUser(user:any){
         this.selectedUser = user;
+    }
+
+    userSubmit(userForm:NgForm){
+        console.log(userForm);
     }
 }

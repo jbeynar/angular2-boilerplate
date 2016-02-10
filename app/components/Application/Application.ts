@@ -10,8 +10,8 @@ import {Home} from "../Home/Home";
 })
 
 @RouteConfig([
-    {path:'hello/:name', name:'Hello', component: Home, useAsDefault: true},
-    {path:'users-list', name:'Users', component: TailList},
+    {path:'hello/:name', name:'Hello', component: Home},
+    {path:'users-list', name:'Users', component: TailList, useAsDefault: true},
 ])
 
 export class Application{
@@ -20,7 +20,7 @@ export class Application{
 
     constructor(private router:Router){}
 
-    public onKeyPress(controlValue){
+    public onKeyPress(controlValue:string){
         if(controlValue){
             this.router.navigate(['Hello', {'name':controlValue}]);
         }

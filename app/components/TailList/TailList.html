@@ -4,28 +4,32 @@
 
 <div class="clearfix"></div>
 
-<div class="row">
+<div class="row" *ngIf="selectedUser" >
     <div class="col-xs-12 col-sm-4">
-        <form *ngIf="selectedUser">
+        <form #userForm="ngForm" (ngSubmit)="userSubmit(userForm)">
             <h4>{{selectedUser.firstName}} {{selectedUser.lastName}} (ID {{selectedUser.id}})</h4>
             <div class="form-group">
                 <label>First name</label>
-                <input class="form-control" type="text" [(ngModel)]="selectedUser.firstName" required>
+                <input class="form-control" type="text"
+                       ngControl="firstName" [(ngModel)]="selectedUser.firstName" required>
             </div>
             <div class="form-group">
                 <label>Last name</label>
-                <input class="form-control" type="text" [(ngModel)]="selectedUser.lastName" required>
+                <input class="form-control" type="text"
+                       ngControl="lastName" [(ngModel)]="selectedUser.lastName" required>
             </div>
             <div class="form-group">
                 <label>Gender</label>
-                <input class="form-control" type="text" [(ngModel)]="selectedUser.gender" required>
+                <input class="form-control" type="text"
+                       ngControl="gender" [(ngModel)]="selectedUser.gender" required>
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input class="form-control" type="email" [(ngModel)]="selectedUser.email" required>
+                <input class="form-control" type="email"
+                       ngControl="email" [(ngModel)]="selectedUser.email" required>
             </div>
             <div class="form-group">
-                <button type="submit">Save</button>
+                <button class="btn btn-success" type="submit" [disabled]="!userForm.form.valid">Save</button>
             </div>
         </form>
     </div>
