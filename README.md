@@ -14,9 +14,9 @@ Install node dependencies.
 
 ```npm install```
 
-Run lite-server and tsc in watch mode simultaneously:
+Run gulp server and tsc in watch mode simultaneously:
   
-```npm run start```
+```gulp```
 
 ## Application
 

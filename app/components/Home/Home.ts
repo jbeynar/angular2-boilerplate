@@ -3,7 +3,8 @@ import {RouteParams} from 'angular2/router';
 import {IPService} from '../../services/IP/IPService';
 
 @Component({
-    templateUrl: 'app/components/Home/Home.html',
+    moduleId: module.id,
+    templateUrl: './Home.html',
     providers: [IPService]
 })
 

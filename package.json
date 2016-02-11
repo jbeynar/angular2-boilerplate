@@ -22,8 +22,10 @@
   "devDependencies": {
     "gulp": "3.9.1",
     "gulp-connect": "^2.3.1",
+    "gulp-open": "^1.0.0",
     "gulp-typescript": "2.10.0",
     "open": "0.0.5",
+    "tslint": "^3.3.0",
     "typescript": "^1.7.5"
   }
 }
