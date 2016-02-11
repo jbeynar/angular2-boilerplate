@@ -1,6 +1,6 @@
-var gulp = require('gulp'),
-        connect = require('gulp-connect'),
-        ts = require('gulp-typescript');
+var gulp = require('gulp');
+var connect = require('gulp-connect');
+var ts = require('gulp-typescript');
 
 var tsProject = ts.createProject('tsconfig.json');
 
