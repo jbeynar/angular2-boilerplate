@@ -7,6 +7,6 @@ import {Component} from 'angular2/core';
     styleUrls: ['app/components/TailListItem/TailListItem.css']
 })
 
-export class TailListItem{
+export class TailListItem {
     item = {};
 }
