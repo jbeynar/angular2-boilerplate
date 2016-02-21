@@ -12,16 +12,15 @@
         <script src="node_modules/angular2/bundles/http.dev.js"></script>
         <script>
             System.config({
-                packages: {
-                    build: {
-                        format: 'register',
-                        defaultExtension: 'js'
-                    }
+                defaultJSExtensions: true,
+                map: {
+                    'angular2': 'node_modules/angular2',
+                    'rxjs': 'node_modules/rxjs'
                 }
             });
             System.import('build/main').then(null, console.error.bind(console));
         </script>
-        <link rel="stylesheet" href="app/main.css" media="all">
+        <link rel="stylesheet" href="build/main.css" media="all">
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
     </head>
     <body>

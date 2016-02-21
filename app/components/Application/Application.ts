@@ -6,7 +6,8 @@ import {Home} from '../Home/Home';
 @Component({
     selector: 'app-root',
     directives: [ROUTER_DIRECTIVES],
-    templateUrl: 'app/components/Application/Application.html',
+    moduleId: module.id,
+    templateUrl: './Application.html',
 })
 
 @RouteConfig([

@@ -6,7 +6,8 @@ import {UserDAO} from '../../services/User/UserDAO';
 import {User} from '../../services/User/User';
 
 @Component({
-    templateUrl: 'app/components/TailList/TailList.html',
+    moduleId: module.id,
+    templateUrl: './TailList.html',
     selector: 'tail-list',
     properties: ['items'],
     directives: [TailListItem],
